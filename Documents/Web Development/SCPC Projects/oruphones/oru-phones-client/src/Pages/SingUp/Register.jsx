@@ -25,7 +25,7 @@ const Register = () => {
                 .then(() => {                  
                     updateUserProfile(data.name)
                         .then(() => {
-                            const insertUser = { name: data.name, email: data.email}
+                            const insertUser = { name: data.name, email: data.email, phone: data.phone}
                             fetch('http://localhost:5000/users', {
                                 method: 'POST',
                                 headers: {
@@ -76,6 +76,13 @@ const Register = () => {
                         </label>
                         <input {...register("email", { required: true })} type="email" placeholder="Type Your Email" className="input-style" />
                         {errors.email && <span className="text-red-600">Email is required</span>}
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text font-semibold text-gray-500">Phone Number</span>
+                        </label>
+                        <input {...register("phone", { required: true })} type="number" placeholder="Insert Phone Number" className="input-style" />
+                        {errors.email && <span className="text-red-600">Phone Number is required</span>}
                     </div>
                     <div className="form-control">
                         <label className="label">
