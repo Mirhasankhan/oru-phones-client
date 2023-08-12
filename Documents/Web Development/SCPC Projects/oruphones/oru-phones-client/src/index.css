@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Delicious+Handrawn&family=Exo+2&family=Itim&family=Josefin+Sans&family=Nunito&family=Poppins&family=Rancho&family=Righteous&family=Roboto&family=Ubuntu&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.dashboard {
+    @apply border-2 rounded-md py-2 text-center font-bold text-xl border-gray-400 mt-4
+}
+
+.active-page {
+    @apply text-[#1E2875] font-semibold text-xl border mt-6 border-[#1E2875] text-center py-2 rounded-md
+}
+.none-active-page {
+    @apply text-[#1E2875] font-semibold text-xl mt-6 text-center py-1 rounded-md
+}
+.input-style {
+    @apply p-2 border-b-2 border-gray-400 outline-green-500
+}
+.login-btn {
+    @apply w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 font-medium text-white py-2 rounded-lg
+}
+
+.upload{
+    @apply font-semibold py-1 bg-slate-200 rounded-xl px-4 text-sm
+}
