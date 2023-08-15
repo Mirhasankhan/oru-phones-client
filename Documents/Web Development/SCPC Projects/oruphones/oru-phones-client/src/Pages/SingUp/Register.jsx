@@ -26,7 +26,7 @@ const Register = () => {
                     updateUserProfile(data.name)
                         .then(() => {
                             const insertUser = { name: data.name, email: data.email, phone: data.phone}
-                            fetch('http://localhost:5000/users', {
+                            fetch('https://oru-phones-server2-mirhasankhan.vercel.app/users', {
                                 method: 'POST',
                                 headers: {
                                     'content-type': 'application/json',

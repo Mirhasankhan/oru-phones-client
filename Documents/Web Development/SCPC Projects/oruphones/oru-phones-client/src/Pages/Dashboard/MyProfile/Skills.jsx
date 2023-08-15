@@ -7,7 +7,7 @@ const Skills = () => {
     const { data: allSkills = [], isLoading, refetch } = useQuery({
         queryKey: ['skill', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/skills?email=${user?.email}`)
+            const res = await fetch(`https://oru-phones-server2-mirhasankhan.vercel.app/skills?email=${user?.email}`)
             return res.json()
         }
     })
@@ -19,7 +19,7 @@ const Skills = () => {
     }
     const handleAddSkill = () => {
         const newSkill = { skill: skill, email: user?.email }
-        fetch('http://localhost:5000/skills', {
+        fetch('https://oru-phones-server2-mirhasankhan.vercel.app/skills', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

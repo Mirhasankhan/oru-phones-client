@@ -10,7 +10,7 @@ const Education = () => {
     const { data: allEducation = [], isLoading, refetch } = useQuery({
         queryKey: ['education', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/education?email=${user?.email}`)
+            const res = await fetch(`https://oru-phones-server2-mirhasankhan.vercel.app/education?email=${user?.email}`)
             return res.json()
         }
     })
@@ -26,7 +26,7 @@ const Education = () => {
     }
     const handleAddEducation = () => {
         const newEducation = { institution: institution, subject: subject, email: user?.email }
-        fetch('http://localhost:5000/education', {
+        fetch('https://oru-phones-server2-mirhasankhan.vercel.app/education', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

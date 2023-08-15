@@ -45,7 +45,7 @@ const AddExperience = () => {
 
     const handleAddExperience = ()=>{
         const newExperience = {year: differenceInYears, email: user?.email, type: type, title: title}
-        fetch('http://localhost:5000/experience', {
+        fetch('https://oru-phones-server2-mirhasankhan.vercel.app/experience', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

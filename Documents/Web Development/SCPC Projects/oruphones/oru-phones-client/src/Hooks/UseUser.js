@@ -7,7 +7,7 @@ const UseUser = ()=>{
     const { data: currentUser = [] , isLoading, refetch} = useQuery({
         queryKey: ['user', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users?email=${user?.email}`)
+            const res = await fetch(`https://oru-phones-server2-mirhasankhan.vercel.app/users?email=${user?.email}`)
             return res.json()
         }        
     })

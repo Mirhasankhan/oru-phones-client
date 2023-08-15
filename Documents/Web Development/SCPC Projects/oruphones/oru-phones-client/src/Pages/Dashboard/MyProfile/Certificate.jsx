@@ -8,7 +8,7 @@ const Certificate = () => {
     const { data: allCertificate = [], isLoading, refetch } = useQuery({
         queryKey: ['certificate', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/certificate?email=${user?.email}`)
+            const res = await fetch(`https://oru-phones-server2-mirhasankhan.vercel.app/certificate?email=${user?.email}`)
             return res.json()
         }
     })
@@ -26,7 +26,7 @@ const Certificate = () => {
     }
     const handleAddCertificate = () => {
         const newCertificate = { certificate: certificate, course: course, email: user?.email }
-        fetch('http://localhost:5000/certificate', {
+        fetch('https://oru-phones-server2-mirhasankhan.vercel.app/certificate', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

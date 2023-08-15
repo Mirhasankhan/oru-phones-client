@@ -14,7 +14,7 @@ const SocialLogin = () => {
             .then((result) => {
                 const loggedInUser = result.user;
                 const insertUser = { name: loggedInUser.displayName, email: loggedInUser.email }
-                fetch('http://localhost:5000/users', {
+                fetch('https://oru-phones-server2-mirhasankhan.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

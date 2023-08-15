@@ -8,7 +8,7 @@ const Experience = () => {
     const { data: expUser = [], isLoading, refetch } = useQuery({
         queryKey: ['experience', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/experience?email=${user?.email}`)
+            const res = await fetch(`https://oru-phones-server2-mirhasankhan.vercel.app/experience?email=${user?.email}`)
             return res.json()
         }
     })
