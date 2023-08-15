@@ -5,13 +5,14 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBOEjuryU5YvzDd1XVxzaT4drxPU97QAIY",
-  authDomain: "oru-phones-86276.firebaseapp.com",
-  projectId: "oru-phones-86276",
-  storageBucket: "oru-phones-86276.appspot.com",
-  messagingSenderId: "156475577179",
-  appId: "1:156475577179:web:eb6be9254e2bdfa5d7007e"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

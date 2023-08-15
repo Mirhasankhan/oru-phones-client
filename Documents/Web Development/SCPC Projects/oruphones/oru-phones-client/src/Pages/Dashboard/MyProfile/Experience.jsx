@@ -15,9 +15,7 @@ const Experience = () => {
 
     return (
         <div className='mx-6 mt-4'>
-            <div className='my-4'>
-                {/* <h1 className='font-semibold'>Experience</h1>
-                <button className="upload">Add</button> */}
+            <div className='my-4'>                
                 <AddExperience />
             </div>
             {
@@ -29,7 +27,7 @@ const Experience = () => {
                     >
                         <h1 className='font-semibold'>{exp.year} Years</h1>
                         <p>{exp.type}</p>
-                        <p>{exp.title}</p>
+                        <p className='text-sky-500 font-semibold'>{exp.title}</p>
                     </div>)
                 }
             </div> : <p className='text-center text-sky-500 font-semibold'>Add your experiences by clicking edit</p>

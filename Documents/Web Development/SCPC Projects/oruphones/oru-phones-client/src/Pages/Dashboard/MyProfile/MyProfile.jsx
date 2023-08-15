@@ -13,11 +13,11 @@ const MyProfile = () => {
     const { user } = useContext(AuthContext)
     return (
         <div className='bg-[#FAFBFF] h-full'>
-            <div className='w-[1050px]'>
+            <div className='w-full md:w-[1050px]'>
                 <div className='bg-[#1E2875] rounded-md h-48'>
                     <h1 className='text-white p-4'>MY PROFILE</h1>
                 </div>
-                <div className='flex gap-12 mx-6 py-8 bg-white'>
+                <div className='md:flex md:gap-12 mx-6 py-8 bg-white'>
                     <div className='w-full'>
                         <ProfileImage/>
                         <PersonalInfo />

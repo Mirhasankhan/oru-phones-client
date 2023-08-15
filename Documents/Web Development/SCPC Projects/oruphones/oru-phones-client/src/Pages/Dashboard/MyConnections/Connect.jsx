@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Connect = ({ user }) => {
+const Connect = ({ user }) => { 
     return (
         <div className='flex justify-between items-center border-2 rounded-md p-3'>
             <div>

@@ -8,6 +8,18 @@ const AddExperience = () => {
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const [differenceInYears, setDifferenceInYears] = useState(null);
+    const [type, setType] = useState('')
+    const [title, setTitle] = useState('')
+
+    const getType = (e) => {
+        const text = e.target.value;
+        setType(text)
+    }
+    const getTitle = (e) => {
+        const course = e.target.value;
+        setTitle(course)
+
+    }
 
     const handleStartDateChange = (date) => {
         setStartDate(date);
@@ -32,7 +44,7 @@ const AddExperience = () => {
     };
 
     const handleAddExperience = ()=>{
-        const newExperience = {year: differenceInYears, email: user?.email, type: 'remote', title: 'React Developer'}
+        const newExperience = {year: differenceInYears, email: user?.email, type: type, title: title}
         fetch('http://localhost:5000/experience', {
             method: 'POST',
             headers: {
@@ -69,11 +81,11 @@ const AddExperience = () => {
                     </div>
                     <div>
                         <label htmlFor="">Job Type:</label>
-                        <input className='border-2 p-1 ml-2' required type="text" placeholder='full time or part time' />
+                        <input onChange={getType} className='border-2 p-1 ml-2' required type="text" placeholder='full time or part time' />
                     </div>
                     <div>
                         <label htmlFor="">Job Title:</label>
-                        <input className='border-2 p-1 ml-2' required type="text" />
+                        <input onChange={getTitle} className='border-2 p-1 ml-2' required type="text" />
                     </div>
                     <h1 onClick={handleAddExperience} className='btn mt-4'>Add Now</h1>
                     <div className="modal-action">

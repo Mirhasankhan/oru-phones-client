@@ -27,15 +27,13 @@ const ProfileImage = () => {
 
     return (
         <div className='w-full flex justify-between items-center mx-6'>            
-            <img className='h-28 rounded-full w-28' src={currentUser[0]?.image || demoImg} alt="" />
-
-            {/* <button type='file' className='upload'>Upload Photo</button> */}
-            <form onSubmit={uploadPhoto}>
+            <img className='h-28 rounded-full w-28' src={currentUser[0]?.image || demoImg} alt="" />           
+            <form className='ml-4'  onSubmit={uploadPhoto}>
                 <input
                     name='image'
                     type="file"
                 />
-                <input className='btn' type="submit" value="submit" />
+                <input className='upload mt-3' type="submit" value="submit" />
             </form>
         </div>
     );

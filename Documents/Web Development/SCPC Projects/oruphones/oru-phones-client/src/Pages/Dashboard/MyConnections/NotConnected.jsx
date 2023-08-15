@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import Connect from './Connect';
+import UseUser from '../../../Hooks/useUser';
 
-const NotConnected = () => {
+const NotConnected = () => {    
     const { data: totalUser = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
@@ -14,9 +15,9 @@ const NotConnected = () => {
     return (
         <div className='mx-6 mt-4'>
             <h1 className='font-semibold text-purple-600'>People you can also connect</h1>
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid md:grid-cols-3 gap-5">
                 {
-                    totalUser.map(user => <Connect key={user._id} user={user}></Connect>)
+                    totalUser.map(user => <Connect key={user._id} user={user} ></Connect>)
                 }
             </div>
         </div>

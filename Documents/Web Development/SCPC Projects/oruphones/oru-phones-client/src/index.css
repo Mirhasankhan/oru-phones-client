@@ -18,14 +18,18 @@ body {
     @apply text-[#1E2875] font-semibold text-xl mt-6 text-center py-1 rounded-md
 }
 .input-style {
-    @apply p-2 border border-gray-400 outline-green-500
+    @apply p-2 border border-gray-400 outline-green-500 rounded-md
 }
 .login-btn {
     @apply w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 font-medium text-white py-2 rounded-lg
 }
 
 .upload{
-    @apply font-semibold py-1 bg-slate-200 rounded-xl px-4 text-sm
+    @apply font-semibold py-1 bg-sky-500  text-white rounded-xl px-4 text-sm
+}
+
+.logout{
+    @apply font-semibold py-3 bg-sky-500  text-white rounded-xl px-4 text-xl
 }
 
 .connect-btn{

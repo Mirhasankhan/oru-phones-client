@@ -56,11 +56,11 @@ const Register = () => {
     };
 
     return (
-        <div className='py-10 bg-gray-500'>
+        <div className='py-10'>
             <Helmet>
                 <title>SignUp | ORU Phones</title>
             </Helmet>
-            <div className='md:w-2/5 w-2/3 mx-auto bg-white rounded-lg p-3'>
+            <div className='md:w-2/5 w-2/3 border-2 mx-auto bg-white rounded-lg p-3'>
                 <h1 className='font-semibold text-2xl text-center'>Create your Oru<span className='text-sky-400'>Phones</span> Account</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                     <div className="form-control">

@@ -14,7 +14,7 @@ const Education = () => {
             return res.json()
         }
     })
-    console.log(allEducation);
+   
     const getInstitution = (e) => {
         const text = e.target.value;
         setinstitution(text)

@@ -69,13 +69,13 @@ const Certificate = () => {
                 <button className="upload" onClick={() => window.my_modal_7.showModal()}>Add</button>
             </div>
            {
-            allCertificate.length> 0 ?  <div className='p-3 rounded-full border-2'>
+            allCertificate.length> 0 ?  <div>
             {
                 allCertificate.map(c => <div
                     key={c._id}
-                    className='text-center mb-2'
+                    className='text-center mb-2 p-3 rounded-full border-2'
                 >
-                    <h1 className='font-semibold'>{c.certificate}</h1>
+                    <h1 className='font-semibold text-sky-500'>{c.certificate}</h1>
                     <p>{c.course}</p>
                 </div>)
             }
