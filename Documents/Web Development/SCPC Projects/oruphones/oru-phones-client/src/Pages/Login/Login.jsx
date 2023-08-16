@@ -88,7 +88,7 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <input className="login-btn" type="submit" value="Login" />
+                        <input className="login-btn cursor-pointer" type="submit" value="Login" />
                     </div>
                 </form>
 

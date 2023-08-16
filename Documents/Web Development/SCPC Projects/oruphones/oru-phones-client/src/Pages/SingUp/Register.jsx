@@ -111,7 +111,7 @@ const Register = () => {
                         <input {...register("RetypePassword", { required: true })} type="password" placeholder="ReType Your Password" className="input-style" />
                     </div>
                     <div className="form-control mt-6">
-                        <input className="login-btn" type="submit" value="Sign Up" />
+                        <input className="login-btn cursor-pointer" type="submit" value="Sign Up" />
                     </div>
                 </form>
 

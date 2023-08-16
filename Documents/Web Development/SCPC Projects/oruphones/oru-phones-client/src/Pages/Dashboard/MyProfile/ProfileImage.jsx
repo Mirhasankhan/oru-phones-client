@@ -21,7 +21,10 @@ const ProfileImage = () => {
                UseUpdate(currentUser[0]._id, uploadImage, refetch)
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error.message, {
+                    position: 'top-right',
+                    style: { backgroundColor: 'blue', color: 'white' }
+                })
             })
     }
 

@@ -61,8 +61,11 @@ const AddExperience = ({refetch}) => {
                 style: { backgroundColor: 'blue', color: 'white' }
             })
         })
-        .catch(erro =>{
-            console.log(erro);
+        .catch(error =>{
+            toast.error(error.message, {
+                position: 'top-right',
+                style: { backgroundColor: 'blue', color: 'white' }
+            })
         })
     }
 

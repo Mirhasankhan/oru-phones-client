@@ -42,7 +42,10 @@ const Certificate = () => {
                 })
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error.message, {
+                    position: 'top-right',
+                    style: { backgroundColor: 'blue', color: 'white' }
+                })
             })
     }
     return (
@@ -80,7 +83,7 @@ const Certificate = () => {
                     <p>{c.course}</p>
                 </div>)
             }
-        </div> : <p className='text-center text-sky-500 font-semibold'>Add your certificates by clicking edit</p>
+        </div> : <p className='text-center text-sky-500 font-semibold'>Add your certificates by clicking add</p>
            }
         </div>
     );

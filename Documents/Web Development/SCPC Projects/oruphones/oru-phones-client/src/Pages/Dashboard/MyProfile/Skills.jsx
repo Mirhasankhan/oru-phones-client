@@ -35,7 +35,10 @@ const Skills = () => {
                 })
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error.message, {
+                    position: 'top-right',
+                    style: { backgroundColor: 'blue', color: 'white' }
+                })
             })
     }
 

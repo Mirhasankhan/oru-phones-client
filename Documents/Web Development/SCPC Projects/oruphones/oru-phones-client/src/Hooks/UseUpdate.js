@@ -11,7 +11,10 @@ const UseUpdate = (id, value, refetch) => {
     })
         .then(() => {
             refetch()            
-            toast.success("User Detail Updated")
+            toast.success('User Detail Updated', {
+                position: 'top-right',
+                style: { backgroundColor: 'blue', color: 'white' }
+            })
         })
         .catch((error) => {
             toast.error(error.message)

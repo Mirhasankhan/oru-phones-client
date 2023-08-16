@@ -44,7 +44,10 @@ const PersonalInfo = () => {
                 toast.success('Email Changed')
             })
             .catch(err => {
-                console.log(err.message);
+                toast.error(error.message, {
+                    position: 'top-right',
+                    style: { backgroundColor: 'blue', color: 'white' }
+                })
             })
     }
 

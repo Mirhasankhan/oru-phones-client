@@ -42,7 +42,10 @@ const Education = () => {
                 })
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error.message, {
+                    position: 'top-right',
+                    style: { backgroundColor: 'blue', color: 'white' }
+                })
             })
     }
     return (
@@ -52,7 +55,7 @@ const Education = () => {
                     <h3 className="font-bold text-lg pb-3">Add Your Certificate</h3>
                     <input required onChange={getInstitution} className='input-style block' type="text" name="" id="" placeholder='Institution Name' />
                     <input required onChange={getSubject} className='input-style block mt-3' type="text" name="" id="" placeholder='Exam Name' />                    
-                    <input className='upload mt-3' type="submit" value="Add" />
+                    <input className='upload mt-3 cursor-pointer' type="submit" value="Add" />
                 </form>
             </dialog>
             <div className='flex justify-between items-center my-4'>
@@ -68,7 +71,7 @@ const Education = () => {
                             <p>{e.subject}</p>
                         </div>)
                     }
-                </div> : <p className='text-center text-sky-500 font-semibold'>Update Your Education Details By Clicking Edit</p>
+                </div> : <p className='text-center text-sky-500 font-semibold'>Update Your Education Details By Clicking Add</p>
            }
         </div>
     );
