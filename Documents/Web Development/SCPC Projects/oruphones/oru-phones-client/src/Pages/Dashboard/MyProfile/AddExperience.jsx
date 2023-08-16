@@ -2,8 +2,9 @@ import React, { useContext, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import { toast } from 'react-hot-toast';
 
-const AddExperience = () => {
+const AddExperience = ({refetch}) => {
     const {user} = useContext(AuthContext)
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
@@ -54,7 +55,11 @@ const AddExperience = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            refetch()
+            toast.success('Experience Updated', {
+                position: 'top-right',
+                style: { backgroundColor: 'blue', color: 'white' }
+            })
         })
         .catch(erro =>{
             console.log(erro);

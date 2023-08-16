@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
+import { toast } from 'react-hot-toast';
 
 const Education = () => {
     const { user } = useContext(AuthContext)
@@ -34,7 +35,11 @@ const Education = () => {
             body: JSON.stringify(newEducation)
         })
             .then(res => res.json()).then(data => {
-                console.log(data);
+                refetch()
+                toast.success('Education Detail Updated', {
+                    position: 'top-right',
+                    style: { backgroundColor: 'blue', color: 'white' }
+                })
             })
             .catch(error => {
                 console.log(error);

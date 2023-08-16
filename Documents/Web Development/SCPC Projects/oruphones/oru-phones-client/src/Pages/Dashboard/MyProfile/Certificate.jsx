@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { BsStarFill } from 'react-icons/Bs';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
+import { toast } from 'react-hot-toast';
 
 const Certificate = () => {
     const { user } = useContext(AuthContext)
@@ -34,7 +35,11 @@ const Certificate = () => {
             body: JSON.stringify(newCertificate)
         })
             .then(res => res.json()).then(data => {
-                console.log(data);
+                refetch()
+                toast.success('Certificate Added', {
+                    position: 'top-right',
+                    style: { backgroundColor: 'blue', color: 'white' }
+                })
             })
             .catch(error => {
                 console.log(error);
@@ -47,7 +52,7 @@ const Certificate = () => {
                     <h3 className="font-bold text-lg">Add Your Certificate</h3>
                     <input onChange={getCertificate} className='input-style block' type="text" name="" id="" placeholder='Certicate Name' />
                     <input onChange={getCourse} className='input-style block mt-3' type="text" name="" id="" placeholder='Course Name' />
-                    <h1 onClick={handleAddCertificate} className='btn mt-3'>Add</h1>
+                    <button onClick={handleAddCertificate} className='btn mt-3'>Add</button>
                     <div className="modal-action">
                         {/* if there is a button in form, it will close the modal */}
                         <button className="btn">Close</button>

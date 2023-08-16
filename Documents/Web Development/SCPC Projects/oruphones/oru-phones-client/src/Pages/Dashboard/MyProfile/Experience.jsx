@@ -16,7 +16,7 @@ const Experience = () => {
     return (
         <div className='mx-6 mt-4'>
             <div className='my-4'>                
-                <AddExperience />
+                <AddExperience refetch={refetch} />
             </div>
             {
                 expUser.length > 0 ? <div>

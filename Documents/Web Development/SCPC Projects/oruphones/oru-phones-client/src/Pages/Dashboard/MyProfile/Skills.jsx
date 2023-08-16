@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
+import { toast } from 'react-hot-toast';
 
 const Skills = () => {
     const { user } = useContext(AuthContext)
@@ -27,7 +28,11 @@ const Skills = () => {
             body: JSON.stringify(newSkill)
         })
             .then(res => res.json()).then(data => {
-                console.log(data);
+                refetch()
+                toast.success('Skill Added', {
+                    position: 'top-right',
+                    style: { backgroundColor: 'blue', color: 'white' }
+                })
             })
             .catch(error => {
                 console.log(error);

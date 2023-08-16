@@ -17,7 +17,7 @@ const ProfileImage = () => {
         })
             .then(res => res.json()).then(imageData => {                
                 const uploadImage = {image: imageData.data.display_url}
-                // upload photo to server
+                // upload photo to server                
                UseUpdate(currentUser[0]._id, uploadImage)
             })
             .catch(error => {
@@ -33,7 +33,7 @@ const ProfileImage = () => {
                     name='image'
                     type="file"
                 />
-                <input className='upload mt-3' type="submit" value="submit" />
+                <input className='upload mt-3 cursor-pointer' type="submit" value="submit" />
             </form>
         </div>
     );
