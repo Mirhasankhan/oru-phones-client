@@ -17,8 +17,8 @@ const ProfileImage = () => {
         })
             .then(res => res.json()).then(imageData => {                
                 const uploadImage = {image: imageData.data.display_url}
-                // upload photo to server                
-               UseUpdate(currentUser[0]._id, uploadImage)
+               refetch()              
+               UseUpdate(currentUser[0]._id, uploadImage, refetch)
             })
             .catch(error => {
                 console.log(error);

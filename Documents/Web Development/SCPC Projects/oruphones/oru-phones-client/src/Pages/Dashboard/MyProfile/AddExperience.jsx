@@ -70,33 +70,26 @@ const AddExperience = ({refetch}) => {
     return (
         <div className='mt-4'>
             <dialog id="my_modal_5" className="modal">
-                <form method="dialog" className="modal-box">
+                <form onSubmit={handleAddExperience} method="dialog" className="modal-box">
                     <div className="DateDifferenceCalculator flex gap-5">
                         <div>
-                            <label>Start Date:</label>
+                            <label className='font-semibold'>Start Date:</label>
                             <DatePicker className='border-2 p-2 rounded-md' selected={startDate} onChange={handleStartDateChange} />
                         </div>
                         <div>
-                            <label>End Date:</label>
+                            <label className='font-semibold'>End Date:</label>
                             <DatePicker className='border-2 p-2 rounded-md' selected={endDate} onChange={handleEndDateChange} />
-                        </div>
-                        {differenceInYears !== null && (
-                            <p>{differenceInYears} years</p>
-                        )}
+                        </div>                        
                     </div>
                     <div>
                         <label htmlFor="">Job Type:</label>
-                        <input onChange={getType} className='border-2 p-1 ml-2' required type="text" placeholder='full time or part time' />
+                        <input onChange={getType} className='input-style p-1 ml-2 my-4' required type="text" placeholder='full time or part time' />
                     </div>
                     <div>
                         <label htmlFor="">Job Title:</label>
-                        <input onChange={getTitle} className='border-2 p-1 ml-2' required type="text" />
-                    </div>
-                    <h1 onClick={handleAddExperience} className='btn mt-4'>Add Now</h1>
-                    <div className="modal-action">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn">Close</button>
-                    </div>
+                        <input onChange={getTitle} className='input-style p-1 ml-2' required type="text" />
+                    </div>                   
+                    <input className='upload mt-3 cursor-pointer' type="submit" value="Add" />                    
                 </form>
             </dialog>
             <div className='flex justify-between items-center my-4'>

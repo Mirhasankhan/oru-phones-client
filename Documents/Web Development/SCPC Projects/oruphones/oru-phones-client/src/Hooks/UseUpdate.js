@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast"
 
-const UseUpdate = (id, value) => {  
+const UseUpdate = (id, value, refetch) => {  
     const url = `https://oru-phones-server2-mirhasankhan.vercel.app/updateProfile/${id}`
     fetch(url, {
         method: 'PATCH',
@@ -10,7 +10,7 @@ const UseUpdate = (id, value) => {
         body: JSON.stringify(value)
     })
         .then(() => {
-            refetch()
+            refetch()            
             toast.success("User Detail Updated")
         })
         .catch((error) => {

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -9,6 +9,10 @@ import SocialLogin from "../../Components/SocialLogin";
 
 const Register = () => {
     const {createUser, updateUserProfile} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location?.state?.from?.pathname || '/'
+
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {        
         const pass = (watch("password"));
@@ -25,6 +29,7 @@ const Register = () => {
                 .then(() => {                  
                     updateUserProfile(data.name)
                         .then(() => {
+                            navigate(from, { replace: true })
                             const insertUser = { name: data.name, email: data.email, phone: data.phone}
                             fetch('https://oru-phones-server2-mirhasankhan.vercel.app/users', {
                                 method: 'POST',

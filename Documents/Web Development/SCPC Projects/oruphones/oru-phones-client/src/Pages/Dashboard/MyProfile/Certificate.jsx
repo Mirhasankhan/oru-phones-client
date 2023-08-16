@@ -48,15 +48,11 @@ const Certificate = () => {
     return (
         <div className="mx-6">
             <dialog id="my_modal_7" className="modal">
-                <form method="dialog" className="modal-box">
+                <form onSubmit={handleAddCertificate} method="dialog" className="modal-box">
                     <h3 className="font-bold text-lg">Add Your Certificate</h3>
-                    <input onChange={getCertificate} className='input-style block' type="text" name="" id="" placeholder='Certicate Name' />
-                    <input onChange={getCourse} className='input-style block mt-3' type="text" name="" id="" placeholder='Course Name' />
-                    <button onClick={handleAddCertificate} className='btn mt-3'>Add</button>
-                    <div className="modal-action">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn">Close</button>
-                    </div>
+                    <input required onChange={getCertificate} className='input-style block' type="text" name="" id="" placeholder='Certicate Name' />
+                    <input required onChange={getCourse} className='input-style block mt-3' type="text" name="" id="" placeholder='Course Name' />                   
+                    <input className='upload mt-3 cursor-pointer' type="submit" value="Add" />                     
                 </form>
             </dialog>
             <div className='w-full border-2 p-3 rounded-md flex gap-4 justify-between items-center'>

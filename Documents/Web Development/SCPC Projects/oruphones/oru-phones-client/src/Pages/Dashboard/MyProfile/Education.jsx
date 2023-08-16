@@ -48,15 +48,11 @@ const Education = () => {
     return (
         <div className="mx-6">
             <dialog id="my_modal_8" className="modal">
-                <form method="dialog" className="modal-box">
-                    <h3 className="font-bold text-lg">Add Your Certificate</h3>
-                    <input onChange={getInstitution} className='input-style block' type="text" name="" id="" placeholder='Institution Name' />
-                    <input onChange={getSubject} className='input-style block mt-3' type="text" name="" id="" placeholder='Exam Name' />
-                    <h1 onClick={handleAddEducation} className='btn mt-3'>Add</h1>
-                    <div className="modal-action">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn">Close</button>
-                    </div>
+                <form onSubmit={handleAddEducation} method="dialog" className="modal-box">
+                    <h3 className="font-bold text-lg pb-3">Add Your Certificate</h3>
+                    <input required onChange={getInstitution} className='input-style block' type="text" name="" id="" placeholder='Institution Name' />
+                    <input required onChange={getSubject} className='input-style block mt-3' type="text" name="" id="" placeholder='Exam Name' />                    
+                    <input className='upload mt-3' type="submit" value="Add" />
                 </form>
             </dialog>
             <div className='flex justify-between items-center my-4'>

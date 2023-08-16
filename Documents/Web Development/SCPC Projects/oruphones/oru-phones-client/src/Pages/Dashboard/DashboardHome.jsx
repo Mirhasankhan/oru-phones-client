@@ -14,7 +14,7 @@ const DashboardHome = () => {
                     <h1 className='font-bold text-5xl'>Find your next top tech job in 1 week.</h1>
                     <p className='text-xl font-bold py-8'><span className='bg-yellow-300'>Are you a top </span>Software Engineer, Product Manager or Data Scientist? <br />
                         Let leading Indian technology <span className='bg-yellow-300'>companies compete to hire you</span>.</p>
-                    <Link to={user?.email ? 'myProfile' : '/login'}><button className='btn btn-secondary'>{user?.email ? 'Update Your Profile' : 'Login To Continue'}</button></Link>
+                    <Link to={user?.email ? 'myProfile' : '/login'}><button className='logout'>{user?.email ? 'Update Your Profile' : 'Login To Continue'}</button></Link>
                 </div>
             </div>
             <div className='flex justify-evenly mt-12 items-center'>

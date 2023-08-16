@@ -16,23 +16,19 @@ const About = () => {
 
     const handleUpdateAbout = () => {
         const userAbout = { about: about }
-        UseUpdate(currentUser[0]._id, userAbout)
+        UseUpdate(currentUser[0]._id, userAbout, refetch)
 
     }
     return (
         <div className='mx-6 w-full'>
             <dialog id="my_modal_1" className="modal">
-                <form method="dialog" className="modal-box">
+                <form onSubmit={handleUpdateAbout} method="dialog" className="modal-box">
                     <h3 className="font-bold text-lg">About Yourself</h3>
-                    <textarea onChange={getData} placeholder='Write here' className='border-2 w-full mt-2 p-3 rounded-md' name="" id="" cols="30" rows="5"></textarea>
-                    <h1 className='btn' onClick={handleUpdateAbout}>Update</h1>
-                    <div className="modal-action">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn">Close</button>
-                    </div>
+                    <textarea onChange={getData} placeholder='Write here' className='input-style w-full mt-2 p-3 rounded-md' name="" id="" cols="30" rows="5"></textarea>                    
+                    <input className='upload mt-3 cursor-pointer' type="submit" value="Update" />                   
                 </form>
             </dialog>
-            <div className='border-2 rounded-md p-3 my-4'>
+            <div className='border-2 rounded-md p-5 my-4'>
                 <div className='flex justify-between items-center'>
                     <h1 className='font-semibold'>About <span className='text-sky-600'>{user?.displayName}</span></h1>
                     <button className="upload" onClick={() => window.my_modal_1.showModal()}>Edit</button>

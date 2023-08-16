@@ -42,17 +42,13 @@ const Skills = () => {
     return (
         <div className='mx-6 w-full'>
             <dialog id="my_modal_6" className="modal">
-                <form method="dialog" className="modal-box">
-                    <h3 className="font-bold text-lg">Add Your Skills</h3>
-                    <input onChange={getData} className='input-style block' type="text" name="" id="" placeholder='Add Skill' />
-                    <h1 onClick={handleAddSkill} className='btn mt-3'>Add</h1>
-                    <div className="modal-action">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn">Close</button>
-                    </div>
+                <form onSubmit={handleAddSkill} method="dialog" className="modal-box">
+                    <h3 className="font-bold text-lg mb-2">Add Your Skills</h3>
+                    <input onChange={getData} className='input-style block' type="text" name="" id="" placeholder='Add Skill' />                    
+                    <input className='upload mt-3 cursor-pointer' type="submit" value="Add" />
                 </form>
             </dialog>
-            <div className='border-2 rounded-md p-3 my-4'>
+            <div className='border-2 rounded-md p-5 my-4'>
                 <div className='flex justify-between items-center'>
                     <h1 className='font-semibold'>Skills</h1>
                     <button className="upload" onClick={() => window.my_modal_6.showModal()}>Add</button>

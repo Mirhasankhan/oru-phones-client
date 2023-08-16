@@ -49,7 +49,9 @@ const Dashboard = () => {
                     <Link className="dashboard" to="/">Dashboard</Link>
                     <NavLink className={({ isActive }) => (isActive ? "active-page" : "none-active-page")} to="/myProfile">My Profile</NavLink>
                     <NavLink className={({ isActive }) => (isActive ? "active-page" : "none-active-page")} to="/myConnections">My Connections</NavLink>
-                    <button onClick={handleLogOut} className="logout mt-auto">Logout</button>
+                    {
+                        user?.email && <button onClick={handleLogOut} className="logout mt-auto">Logout</button>
+                    }
                 </ul>
 
             </div>

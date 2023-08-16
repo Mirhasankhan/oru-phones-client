@@ -25,63 +25,52 @@ const PersonalInfo = () => {
     }
 
     const handleNumberEdit = () => {
-        const userPhone = {phone: phoneNumber}
-        UseUpdate(currentUser[0]._id, userPhone)
+        const userPhone = { phone: phoneNumber }
+        UseUpdate(currentUser[0]._id, userPhone, refetch)
     }
-    const handleNameEdit = () =>{
+    const handleNameEdit = () => {
         updateUserProfile(newName)
-        .then(()=>{
-            toast.success("Name Updated")
-        })
-        .catch((err) =>{
-            toast.error(err.message)
-        })
+            .then(() => {
+                toast.success("Name Updated")
+            })
+            .catch((err) => {
+                toast.error(err.message)
+            })
     }
-    
-    const handleEmailChange = () =>{
+
+    const handleEmailChange = () => {
         updateUserEmail(newEmail)
-        .then(()=>{
-            toast.success('Email Changed')
-        })
-        .catch(err =>{
-            console.log(err.message);
-        })
+            .then(() => {
+                toast.success('Email Changed')
+            })
+            .catch(err => {
+                console.log(err.message);
+            })
     }
 
     return (
         <div className='w-full border-2 p-5 mx-6 rounded-md mt-4'>
             {/* dialg starts */}
             <dialog id="my_modal_2" className="modal">
-                <form method="dialog" className="modal-box">
+                <form onSubmit={handleNumberEdit} method="dialog" className="modal-box">
                     <h3 className="font-bold text-lg">Update Your Phone Number</h3>
-                    <input onChange={getData} className='border-2 p-2 block my-4' type="number" placeholder='Type Phone Number'/>
-                    <h1 className='btn' onClick={handleNumberEdit}>Update</h1>
-                    <div className="modal-action">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn">Close</button>
-                    </div>
+                    <input onChange={getData} className='border-2 p-2 block my-4' type="number" placeholder='Type Phone Number' />                    
+                    <input className='upload mt-3 cursor-pointer' type="submit" value="Update" />                    
                 </form>
             </dialog>
             <dialog id="my_modal_3" className="modal">
-                <form method="dialog" className="modal-box">
+                <form onSubmit={handleNameEdit} method="dialog" className="modal-box">
                     <h3 className="font-bold text-lg">Update Your Name</h3>
-                    <input onChange={setName} className='border-2 p-2 block my-4' type="text" placeholder='Type Name'/>
-                    <h1 className='btn' onClick={handleNameEdit}>Update</h1>
-                    <div className="modal-action">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn">Close</button>
-                    </div>
+                    <input onChange={setName} className='input-style block my-4' type="text" placeholder='Type Name' />
+                    <input className='upload mt-3 cursor-pointer' type="submit" value="Update" />                    
                 </form>
+
             </dialog>
             <dialog id="my_modal_4" className="modal">
-                <form method="dialog" className="modal-box">
+                <form onSubmit={handleEmailChange} method="dialog" className="modal-box">
                     <h3 className="font-bold text-lg">Update Your Email</h3>
-                    <input required onChange={getEmail} className='border-2 p-2 block my-4' type="email" placeholder='Type Email'/>
-                    <h1 className='btn' onClick={handleEmailChange}>Update</h1>
-                    <div className="modal-action">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn">Close</button>
-                    </div>
+                    <input required onChange={getEmail} className='input-style block w-full my-2' type="email" placeholder='Type Email' />
+                    <input className='upload mt-3 cursor-pointer' type="submit" value="Update" />
                 </form>
             </dialog>
             {/* dialog ends */}
